@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nInitial commit - AYS Store E-commerce Platform\n\n- Backend: Express + TypeScript + Prisma + PostgreSQL\n- Frontend: Next.js 14 + TypeScript + Tailwind CSS\n- 623 productos en 9 categorías\n- Sistema de autenticación JWT\n- Carrito de compras y órdenes\n- Filtros por categoría y material\n- Categorización inteligente de productos\n- Base de datos en DigitalOcean\n\nCategorías:\n- Aretes \\(201\\), Collares \\(168\\), Pulseras \\(132\\)\n- Anillos \\(66\\), Accesorios \\(37\\), Tobilleras \\(14\\)\n- Conjuntos \\(5\\), Bolsos, Moñas\n\nCo-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(find:*)"
+    ]
+  }
+}

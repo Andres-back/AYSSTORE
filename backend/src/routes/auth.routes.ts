@@ -1,0 +1,33 @@
+import { Router } from 'express';
+import { body } from 'express-validator';
+import { register, login, getMe } from '../controllers/auth.controller';
+import { authenticate } from '../middleware/auth';
+import { authLimiter } from '../middleware/rateLimiter';
+
+const router = Router();
+
+router.post(
+  '/register',
+  authLimiter,
+  [
+    body('email').isEmail().normalizeEmail(),
+    body('password').isLength({ min: 6 }),
+    body('firstName').trim().notEmpty(),
+    body('lastName').trim().notEmpty()
+  ],
+  register
+);
+
+router.post(
+  '/login',
+  authLimiter,
+  [
+    body('email').isEmail().normalizeEmail(),
+    body('password').notEmpty()
+  ],
+  login
+);
+
+router.get('/me', authenticate, getMe);
+
+export default router;
